@@ -49,15 +49,9 @@ int inputPuzzle()
 bool findEmptyPosition(int grid_size,int &row, int&col)
 {
     for(row=0; row<grid_size; row++)
-    {
         for(col=0; col<grid_size; col++)
-        {
             if(grid[row][col] == UNMARKED)
-            {
                 return true;
-            }
-        }
-    }
     return false;
 }
 
@@ -71,12 +65,8 @@ bool findEmptyPosition(int grid_size,int &row, int&col)
 bool isSafeRow(int grid_size,int row,int num)
 {
     for(int i=0; i<grid_size; i++)
-    {
         if(grid[row][i]==num)
-        {
             return false;
-        }
-    }
     return true;
 }
 
@@ -90,12 +80,8 @@ bool isSafeRow(int grid_size,int row,int num)
 bool isSafeCol(int grid_size,int col,int num)
 {
     for(int i=0; i<grid_size; i++)
-    {
         if(grid[i][col]==num)
-        {
             return false;
-        }
-    }
     return true;
 }
 
@@ -119,10 +105,8 @@ bool isSafeBox(int grid_size,int row,int col,int num)
         for(int j=0; j<box_size; j++)
         {
             //cout<<"I="<<i+box_start_row<<"--J="<<j+box_start_col<<endl;
-            if( grid[i+box_start_row][j+box_start_col] == num)
-            {
+            if(grid[i+box_start_row][j+box_start_col] == num)
                 return false;
-            }
         }
     }
     return true;
